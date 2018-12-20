@@ -189,42 +189,57 @@ public class EditStudent extends JFrame {
 		btnLoadRecord.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				textField.setVisible(true);
-				lblName.setVisible(true);
 				
-				textField_1.setVisible(true);
-				lblEmail.setVisible(true);
 				
-				textField_2.setVisible(true);
-				lblCourse.setVisible(true);
-				
-				textField_3.setVisible(true);
-				lblFee.setVisible(true);
-
-				textField_4.setVisible(true);
-				lblPaid.setVisible(true);
-				
-				textField_5.setVisible(true);
-				lblDue.setVisible(true);
-				
-				textField_6.setVisible(true);
-				lblAddress.setVisible(true);
-
-				textField_7.setVisible(true);
-				lblCity.setVisible(true);
-				
-				textField_8.setVisible(true);
-				lblState.setVisible(true);
-				
-				textField_9.setVisible(true);
-				lblCountry.setVisible(true);
-				
-				btnAddAccountant.setVisible(true);
 				
 				String srollno=textField_10.getText();
-				if(srollno==null || srollno.trim().equals("  ") ){
-					JOptionPane.showMessageDialog(EditStudent.this,"Please enter rollno first!");
+				boolean validChar = true;
+				char firstChar = ' ';
+				firstChar = srollno.charAt(0);
+				
+				if(firstChar == '-')
+					validChar = true;
+				else if(firstChar == '0') 
+					validChar = true;
+				else 
+					validChar = false;
+				
+				
+				if(srollno==null || srollno.trim().equals("") || validChar == true  ){
+					JOptionPane.showMessageDialog(EditStudent.this,"Please enter valid rollno first!");
 				}else{
+					
+					btnAddAccountant.setVisible(true);
+					
+					textField.setVisible(true);
+					lblName.setVisible(true);
+					
+					textField_1.setVisible(true);
+					lblEmail.setVisible(true);
+					
+					textField_2.setVisible(true);
+					lblCourse.setVisible(true);
+					
+					textField_3.setVisible(true);
+					lblFee.setVisible(true);
+
+					textField_4.setVisible(true);
+					lblPaid.setVisible(true);
+					
+					textField_5.setVisible(true);
+					lblDue.setVisible(true);
+					
+					textField_6.setVisible(true);
+					lblAddress.setVisible(true);
+
+					textField_7.setVisible(true);
+					lblCity.setVisible(true);
+					
+					textField_8.setVisible(true);
+					lblState.setVisible(true);
+					
+					textField_9.setVisible(true);
+					lblCountry.setVisible(true);
 				int rollno=Integer.parseInt(srollno);
 				Student s=StudentData.getStudentByRollno(rollno);
 				textField.setText(s.getName());
