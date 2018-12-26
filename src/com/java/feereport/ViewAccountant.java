@@ -2,6 +2,7 @@ package com.java.feereport;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -41,6 +42,20 @@ public class ViewAccountant extends JFrame {
 		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 800, 400);
+		
+		// Adding Back Button to the eventLisner
+		setLayout(new BorderLayout());
+		setLayout(new FlowLayout());
+		JButton btn = new JButton("Back");
+		add(btn);
+		
+		btn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AdminSection.main(new String[]{});
+				frame.dispose();
+			}
+		});
+		
 	}
 
 	public static void main(String[] args) {
@@ -49,6 +64,7 @@ public class ViewAccountant extends JFrame {
 				try {
 					frame = new ViewAccountant();
 					frame.setVisible(true);
+					frame.setSize(500,500);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

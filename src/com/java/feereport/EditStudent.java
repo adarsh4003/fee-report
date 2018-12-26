@@ -176,6 +176,8 @@ public class EditStudent extends JFrame {
 			}
 		});
 		
+		
+		
 		JLabel lblRollNo = new JLabel("Roll No:");
 		
 		textField_10 = new JTextField();

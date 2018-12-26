@@ -2,8 +2,12 @@ package com.java.feereport;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.List;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -12,7 +16,10 @@ import javax.swing.border.EmptyBorder;
 
 public class DueFee extends JFrame {
 	static DueFee frame;
+	JButton btn1;
 	public DueFee() {
+		
+		
 		//Code to view data in JTable
 		List<Student> list=StudentData.due();
 		int size=list.size();
@@ -40,9 +47,24 @@ public class DueFee extends JFrame {
 		JTable jt=new JTable(data,columnNames);
 		JScrollPane sp=new JScrollPane(jt);
 		add(sp);
+		setBounds(100, 100, 800, 400);
 		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 800, 400);
+		
+		// Adding Back Button to the eventLisner
+		setLayout(new BorderLayout());
+		setLayout(new FlowLayout());
+		btn1 = new JButton("Back");
+		add(btn1);
+		
+		btn1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AccountantSection.main(new String[]{});
+				frame.dispose();
+			}
+		});
+		
+		
 	}
 
 	public static void main(String[] args) {
@@ -51,6 +73,7 @@ public class DueFee extends JFrame {
 				try {
 					frame = new DueFee();
 					frame.setVisible(true);
+					frame.setSize(500,500);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

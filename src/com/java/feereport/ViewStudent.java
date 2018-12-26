@@ -2,28 +2,33 @@ package com.java.feereport;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
-import javax.swing.GroupLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JPasswordField;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.JTextField;
 import javax.swing.GroupLayout.Alignment;
-import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.EmptyBorder;
-import com.java.feereport.*;
+import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumn;
 
 public class ViewStudent extends JFrame {
 	static ViewStudent frame;
+	JLabel l1;
+	JButton btn;
 	
-
 	public ViewStudent() {
+		
+		//frame section.
+				
+		
 		//Code to view data in JTable
 		List<Student> list=StudentData.view();
 		int size=list.size();
@@ -46,47 +51,43 @@ public class ViewStudent extends JFrame {
 			
 			row++;
 		}
-			
 		String columnNames[]={"Rollno","Name","Email","Course","Fee","Paid","Due","Address","City","State","Country","Contact No"};
 		
 		
-		JTable jt=new JTable(data,columnNames);
 		
+		JTable jt=new JTable(data,columnNames);
 		JScrollPane sp=new JScrollPane(jt);
 		add(sp);
 		
-		//back button
-		
-				JButton btnBack = new JButton("back");
-				btnBack.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						AccountantSection.main(new String[]{});
-						frame.dispose();
-					}
-				});
-				
-				add(btnBack);
-				//back button
-				
 		
 		
-		
-		
-		
-	
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 800, 400);
-	}
 	
-	
+		// Adding Back Button to the eventLisner
+		setLayout(new BorderLayout());
+		setLayout(new FlowLayout());
+		btn = new JButton("Back");
+		add(btn);
+		
+		btn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AccountantSection.main(new String[]{});
+				frame.dispose();
+			}
+		});
+			}
 	
 
+
+	 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					frame = new ViewStudent();
-					frame.setVisible(true);
+					frame.setVisible(true);	
+					frame.setSize(500,500);
 					
 					
 				} catch (Exception e) {
@@ -94,6 +95,5 @@ public class ViewStudent extends JFrame {
 				}
 			}
 		});
-		
 	}
 }
