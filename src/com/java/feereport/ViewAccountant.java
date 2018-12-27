@@ -1,8 +1,10 @@
 package com.java.feereport;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -51,6 +53,8 @@ public class ViewAccountant extends JFrame {
 		setLayout(new BorderLayout());
 		setLayout(new FlowLayout());
 		JButton btn = new JButton("Back");
+		btn.setForeground(Color.BLACK);
+		btn.setFont(new Font("Serif", Font.BOLD,16));
 		add(btn);
 		
 		btn.addActionListener(new ActionListener() {

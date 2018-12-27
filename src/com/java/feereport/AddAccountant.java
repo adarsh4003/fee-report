@@ -58,16 +58,24 @@ public class AddAccountant extends JFrame {
 		setContentPane(contentPane);
 		
 		JLabel lblAddAccountant = new JLabel("Add Accountant");
-		lblAddAccountant.setForeground(Color.DARK_GRAY);
-		lblAddAccountant.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblAddAccountant.setForeground(Color.BLACK);
+		lblAddAccountant.setFont(new Font("Serif", Font.BOLD, 20));
 		
 		JLabel lblName = new JLabel("Name:");
+		lblName.setForeground(Color.BLACK);
+		lblName.setFont(new Font("Serif", Font.BOLD, 20));
 		
 		JLabel lblPassword = new JLabel("Password:");
+		lblPassword.setForeground(Color.BLACK);
+		lblPassword.setFont(new Font("Serif", Font.BOLD, 14));
 		
 		JLabel lblEmail = new JLabel("Email:");
+		lblEmail.setForeground(Color.BLACK);
+		lblEmail.setFont(new Font("Serif", Font.BOLD, 20));
 		
 		JLabel lblContactNo = new JLabel("Contact No:");
+		lblContactNo.setForeground(Color.BLACK);
+		lblContactNo.setFont(new Font("Serif", Font.BOLD, 15));
 		
 		textField = new JTextField();
 		textField.setColumns(10);
@@ -81,6 +89,8 @@ public class AddAccountant extends JFrame {
 		textField_2.setColumns(10);
 		
 		JButton btnAddAccountant = new JButton("Add Accountant");
+		btnAddAccountant.setForeground(Color.BLACK);
+		btnAddAccountant.setFont(new Font("Serif", Font.BOLD, 13));
 		btnAddAccountant.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String name=textField.getText();
@@ -103,6 +113,7 @@ public class AddAccountant extends JFrame {
 		});
 		
 		JButton btnBack = new JButton("Back");
+		btnBack.setForeground(Color.BLACK);
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AdminSection.main(new String[]{});

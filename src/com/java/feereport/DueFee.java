@@ -1,6 +1,7 @@
 package com.java.feereport;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
@@ -52,9 +53,11 @@ public class DueFee extends JFrame {
 		
 		JTable jt=new JTable(data,columnNames);
 		JScrollPane sp=new JScrollPane(jt);
-		add(sp);
-		setBounds(100, 100, 800, 400);
 		
+		add(sp);
+		
+		setBounds(100, 100, 800, 400);
+		sp.setPreferredSize(new Dimension(600, 500));
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
 		// Adding Back Button to the eventLisner
@@ -86,7 +89,7 @@ public class DueFee extends JFrame {
 				try {
 					frame = new DueFee();
 					frame.setVisible(true);
-					frame.setSize(500,500);
+					frame.setSize(620,580);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

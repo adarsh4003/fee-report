@@ -27,6 +27,7 @@ import java.awt.Color;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.JPasswordField;
+import javax.swing.JTable;
 import javax.swing.JButton;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.event.ActionListener;
@@ -65,14 +66,9 @@ public class BackgroundImage {
        lblBackgroundImage.setLayout(new FlowLayout());
 
        //sets background image of panel
-       lblBackgroundImage.setIcon(new ImageIcon("C:\\Users\\P C\\Desktop\\images1.jpg"));
+       lblBackgroundImage.setIcon(new ImageIcon("C:\\Users\\P C\\Desktop\\images5.jpg"));
        lblBackgroundImage.setLayout(new BorderLayout());
        lblBackgroundImage.setSize(500, 500);
-
-       panel.setOpaque(false);
-       panel.setLayout(new FlowLayout());
-
-       lblBackgroundImage.setLayout(new FlowLayout());
 	   lblBackgroundImage.add(panel);
 
 	        return panel;
@@ -82,6 +78,8 @@ public class BackgroundImage {
 	{
 		return lblBackgroundImage;
 	}
+	
+	
 	
 }
 

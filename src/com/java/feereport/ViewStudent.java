@@ -6,6 +6,7 @@ import java.awt.EventQueue;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.PasswordAuthentication;
 import java.util.List;
 
 import javax.swing.ImageIcon;
@@ -22,10 +23,12 @@ import javax.swing.table.TableColumn;
 
 public class ViewStudent extends JFrame {
 	static ViewStudent frame;
+	JTable jt;
+	JScrollPane sp;
 	private JPanel panel2 = new JPanel();
 	JLabel l1;
 	JButton btn;
-	private JLabel lblBackgroundImage;
+	private  JLabel lblBackgroundImage;
 	
 	public ViewStudent() {
 		
@@ -58,10 +61,25 @@ public class ViewStudent extends JFrame {
 		
 		
 		
-		JTable jt=new JTable(data,columnNames);
-		JScrollPane sp=new JScrollPane(jt);
-	//	JScrollPane scrollpane = new JScrollPane(table);
-//	sp.setPreferredSize(new Dimension(500, 500));
+		jt=new JTable(data,columnNames);
+		
+		
+		
+		 sp=new JScrollPane(jt);
+//		 jt.getColumnModel().getColumn(0).setPreferredWidth(500);
+//		 jt.getColumnModel().getColumn(1).setPreferredWidth(500);
+//		 jt.getColumnModel().getColumn(2).setPreferredWidth(500);
+//		 jt.getColumnModel().getColumn(3).setPreferredWidth(500);
+//		 jt.getColumnModel().getColumn(4).setPreferredWidth(500);
+//		 jt.getColumnModel().getColumn(5).setPreferredWidth(500);
+//		 jt.getColumnModel().getColumn(6).setPreferredWidth(500);
+//		 jt.getColumnModel().getColumn(7).setPreferredWidth(500);
+//		 jt.getColumnModel().getColumn(8).setPreferredWidth(500);
+//		 jt.getColumnModel().getColumn(9).setPreferredWidth(500);
+//		 jt.getColumnModel().getColumn(10).setPreferredWidth(500);
+//	 jt.getColumnModel().getColumn(11).setPreferredWidth(500);
+		 
+sp.setPreferredSize(new Dimension(600, 500));
 		add(sp);
 		
 		
@@ -82,13 +100,11 @@ public class ViewStudent extends JFrame {
 					
 				});
 	
-		
 				 //initializes panels and panel layout
 				BackgroundImage image = new BackgroundImage();
 				panel2 = image.backgroudImage(panel2);
 				lblBackgroundImage = image.getbackgroundimage();
-				add(lblBackgroundImage);
-		
+				//add(lblBackgroundImage);
 			}
 	
 
@@ -100,7 +116,9 @@ public class ViewStudent extends JFrame {
 				try {
 					frame = new ViewStudent();
 					frame.setVisible(true);	
-					frame.setSize(500,500);
+					frame.setSize(620,580);
+					
+					
 					
 					
 				} catch (Exception e) {

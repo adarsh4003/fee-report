@@ -64,6 +64,7 @@ public class AdminLogin extends JFrame {
 				frame = new AdminLogin();
 				 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	                frame.pack();
+	                frame.setSize(500,300);
 	                frame.setLocationRelativeTo(null);
 	                frame.setVisible(true);
 			}
@@ -84,7 +85,7 @@ public class AdminLogin extends JFrame {
 	public AdminLogin() {
 //----------------------------------------------------------------------------------------------------------------------------------------------------//		
 		setTitle("ADMIN-LOGIN");
-        setSize(650, 650);
+        setSize(500, 500);
        panel2  = new JPanel();
        
 
@@ -102,15 +103,17 @@ public class AdminLogin extends JFrame {
 	    //setContentPane(panel2);
 		
 		JLabel lblAdminLogin = new JLabel("Admin Login");
-		lblAdminLogin.setForeground(Color.red);
-		lblAdminLogin.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblAdminLogin.setForeground(Color.BLACK);
+		lblAdminLogin.setFont(new Font("Serif", Font.BOLD, 20));
 		
 		JLabel lblName = new JLabel("Name:");
-		lblName.setForeground(Color.red);
-	    lblName.setSize(500, 500);
+		lblName.setForeground(Color.BLACK);
+		lblName.setFont(new Font("Serif", Font.BOLD, 20));
+	 
 		
 		JLabel lblPassword = new JLabel("Password:");
-		lblPassword.setForeground(Color.red);
+		lblPassword.setForeground(Color.BLACK);
+		lblPassword.setFont(new Font("Serif", Font.BOLD, 20));
 		
 		textField = new JTextField();
 		textField.setColumns(10);
@@ -118,6 +121,7 @@ public class AdminLogin extends JFrame {
 		passwordField = new JPasswordField();
 		
 	//	JButton btnLogin = new JButton("login");
+		btnLogin.setFont(new Font("Serif", Font.BOLD, 20));
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			String name=textField.getText();

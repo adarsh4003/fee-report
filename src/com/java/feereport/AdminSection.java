@@ -55,10 +55,12 @@ public class AdminSection extends JFrame {
 		setContentPane(contentPane);
 		
 		JLabel lblAdminSection = new JLabel("Admin Section");
-		lblAdminSection.setForeground(Color.DARK_GRAY);
-		lblAdminSection.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblAdminSection.setForeground(Color.BLACK);
+		lblAdminSection.setFont(new Font("Serif", Font.BOLD, 20));
 		
 		JButton btnAddAccountant = new JButton("Add Accountant");
+		btnAddAccountant.setForeground(Color.BLACK);
+		btnAddAccountant.setFont(new Font("Serif", Font.BOLD, 13));
 		btnAddAccountant.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AddAccountant.main(new String[]{});
@@ -67,6 +69,8 @@ public class AdminSection extends JFrame {
 		});
 		
 		JButton btnViewAccountant = new JButton("View Accountant");
+		btnViewAccountant.setForeground(Color.BLACK);
+		btnViewAccountant.setFont(new Font("Serif", Font.BOLD, 13));
 		btnViewAccountant.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ViewAccountant.main(new String[]{});
@@ -74,6 +78,7 @@ public class AdminSection extends JFrame {
 		});
 		
 		JButton btnLogout = new JButton("Logout");
+		btnLogout.setFont(new Font("Serif", Font.BOLD, 20));
 		btnLogout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				FeeReport.main(new String[]{});
