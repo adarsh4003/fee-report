@@ -1,14 +1,21 @@
 package com.java.feereport;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.net.PasswordAuthentication;
 import java.util.List;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -18,6 +25,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 
@@ -30,7 +38,7 @@ public class ViewStudent extends JFrame {
 	JButton btn;
 	private  JLabel lblBackgroundImage;
 	
-	public ViewStudent() {
+	public ViewStudent() throws IOException {
 		
 		//frame section.
 				
@@ -59,28 +67,28 @@ public class ViewStudent extends JFrame {
 		}
 		String columnNames[]={"Rollno","Name","Email","Course","Fee","Paid","Due","Address","City","State","Country","Contact No"};
 		
+		final BufferedImage image = ImageIO.read( new File("C:\\Users\\P C\\Desktop\\images5.jpg"));
+
+		jt=new JTable(data,columnNames){{
+	        setOpaque(false);
+	        setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {{
+	            setOpaque(false);
+	        }});
+	    }};
+
 		
+		add(new JScrollPane(jt) {{
+		    setOpaque(false);
+		    setPreferredSize(new Dimension(600, 500));
+		    getViewport().setOpaque(false);
+		}
+		@Override
+		protected void paintComponent(Graphics g) {
+		    g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
+		    super.paintComponent(g);
+		}
 		
-		jt=new JTable(data,columnNames);
-		
-		
-		
-		 sp=new JScrollPane(jt);
-//		 jt.getColumnModel().getColumn(0).setPreferredWidth(500);
-//		 jt.getColumnModel().getColumn(1).setPreferredWidth(500);
-//		 jt.getColumnModel().getColumn(2).setPreferredWidth(500);
-//		 jt.getColumnModel().getColumn(3).setPreferredWidth(500);
-//		 jt.getColumnModel().getColumn(4).setPreferredWidth(500);
-//		 jt.getColumnModel().getColumn(5).setPreferredWidth(500);
-//		 jt.getColumnModel().getColumn(6).setPreferredWidth(500);
-//		 jt.getColumnModel().getColumn(7).setPreferredWidth(500);
-//		 jt.getColumnModel().getColumn(8).setPreferredWidth(500);
-//		 jt.getColumnModel().getColumn(9).setPreferredWidth(500);
-//		 jt.getColumnModel().getColumn(10).setPreferredWidth(500);
-//	 jt.getColumnModel().getColumn(11).setPreferredWidth(500);
-		 
-sp.setPreferredSize(new Dimension(600, 500));
-		add(sp);
+		});
 		
 		
 		
@@ -90,6 +98,8 @@ sp.setPreferredSize(new Dimension(600, 500));
 				setLayout(new BorderLayout());
 				setLayout(new FlowLayout());
 				btn = new JButton("Back");
+				btn.setForeground(Color.BLACK);
+				btn.setFont(new Font("Serif", Font.BOLD, 18));
 				add(btn);
 				
 				btn.addActionListener(new ActionListener() {
@@ -99,16 +109,7 @@ sp.setPreferredSize(new Dimension(600, 500));
 					}
 					
 				});
-	
-				 //initializes panels and panel layout
-				BackgroundImage image = new BackgroundImage();
-				panel2 = image.backgroudImage(panel2);
-				lblBackgroundImage = image.getbackgroundimage();
-				//add(lblBackgroundImage);
-			}
-	
-
-
+	}
 	 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -117,9 +118,6 @@ sp.setPreferredSize(new Dimension(600, 500));
 					frame = new ViewStudent();
 					frame.setVisible(true);	
 					frame.setSize(620,580);
-					
-					
-					
 					
 				} catch (Exception e) {
 					e.printStackTrace();

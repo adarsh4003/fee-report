@@ -56,19 +56,25 @@ public class AccountantLogin extends JFrame {
 		setContentPane(contentPane);
 		
 		JLabel lblAccountantLogin = new JLabel("Accountant Login");
-		lblAccountantLogin.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblAccountantLogin.setForeground(Color.DARK_GRAY);
+		lblAccountantLogin.setForeground(Color.BLACK);
+		lblAccountantLogin.setFont(new Font("Serif", Font.BOLD, 13));
 		
 		JLabel lblName = new JLabel("Name:");
+		lblName.setForeground(Color.BLACK);
+		lblName.setFont(new Font("Serif", Font.BOLD, 20));
 		
 		textField = new JTextField();
 		textField.setColumns(10);
 		
 		JLabel lblPassword = new JLabel("Password:");
+		lblPassword.setForeground(Color.BLACK);
+		lblPassword.setFont(new Font("Serif", Font.BOLD, 13));
 		
 		passwordField = new JPasswordField();
 		
 		JButton btnLogin = new JButton("login");
+		btnLogin.setForeground(Color.BLACK);
+		btnLogin.setFont(new Font("Serif", Font.BOLD,20));
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			String name=textField.getText();
@@ -84,6 +90,9 @@ public class AccountantLogin extends JFrame {
 		});
 		
 		JButton btnBack = new JButton("back");
+		btnBack.setForeground(Color.BLACK);
+		btnBack.setFont(new Font("Serif", Font.BOLD,20));
+		
 		// Adding Back Button to the eventLisner
 				setLayout(new BorderLayout());
 				setLayout(new FlowLayout());

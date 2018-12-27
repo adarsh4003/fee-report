@@ -49,44 +49,58 @@ public class AccountantSection extends JFrame {
 		setContentPane(contentPane);
 		
 		JButton btnNewButton = new JButton("Add Student");
+		btnNewButton.setForeground(Color.BLACK);
+		btnNewButton.setFont(new Font("Serif", Font.BOLD, 16));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AddStudent.main(new String[]{});
-				frame.disable();
+				frame.dispose();
 			}
 		});
 		
 		JLabel lblAccountantSection = new JLabel("Accountant Section");
-		lblAccountantSection.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblAccountantSection.setForeground(Color.DARK_GRAY);
+		lblAccountantSection.setForeground(Color.BLACK);
+		lblAccountantSection.setFont(new Font("Serif", Font.BOLD, 20));
 		
 		JButton btnViewStudent = new JButton("View Student");
+		btnViewStudent.setForeground(Color.BLACK);
+		btnViewStudent.setFont(new Font("Serif", Font.BOLD, 16));
 		btnViewStudent.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
 				ViewStudent.main(new String[]{});
 			}
 		});
 		
 		JButton btnEditStudent = new JButton("Edit Student");
+		btnEditStudent.setForeground(Color.BLACK);
+		btnEditStudent.setFont(new Font("Serif", Font.BOLD, 16));
 		btnEditStudent.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				EditStudent.main(new String[]{});
 				frame.dispose();
+				EditStudent.main(new String[]{});
+				
 			}
 		});
 		
 		JButton btnDueFee = new JButton("Due Fee");
+		btnDueFee.setForeground(Color.BLACK);
+		btnDueFee.setFont(new Font("Serif", Font.BOLD, 16));
 		btnDueFee.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
 				DueFee.main(new String[]{});
 			}
 		});
 		
 		JButton btnExit = new JButton("Exit");
+		btnExit.setForeground(Color.BLACK);
+		btnExit.setFont(new Font("Serif", Font.BOLD, 20));
 		btnExit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				FeeReport.main(new String[]{});
 				frame.dispose();
+				FeeReport.main(new String[]{});
+				
 			}
 		});
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);

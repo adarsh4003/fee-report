@@ -73,6 +73,7 @@ public class AdminSection extends JFrame {
 		btnViewAccountant.setFont(new Font("Serif", Font.BOLD, 13));
 		btnViewAccountant.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
 				ViewAccountant.main(new String[]{});
 			}
 		});

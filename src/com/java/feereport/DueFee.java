@@ -1,13 +1,20 @@
 package com.java.feereport;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
+import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -15,6 +22,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableCellRenderer;
 
 public class DueFee extends JFrame {
 	static DueFee frame;
@@ -24,7 +32,7 @@ public class DueFee extends JFrame {
 	private JLabel lblBackgroundImage;
 	private JButton btn;
 
-	public  DueFee() {
+	public  DueFee() throws IOException {
 		
 		
 		//Code to view data in JTable
@@ -52,18 +60,41 @@ public class DueFee extends JFrame {
 		String columnNames[]={"Rollno","Name","Email","Course","Fee","Paid","Due","Address","City","State","Country","Contact No"};
 		
 		JTable jt=new JTable(data,columnNames);
-		JScrollPane sp=new JScrollPane(jt);
 		
-		add(sp);
+		final BufferedImage image = ImageIO.read( new File("C:\\Users\\P C\\Desktop\\images5.jpg"));
+
+		jt=new JTable(data,columnNames){{
+	        setOpaque(false);
+	        setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {{
+	            setOpaque(false);
+	        }});
+	    }};
+
+		
+		add(new JScrollPane(jt) {{
+		    setOpaque(false);
+		    setPreferredSize(new Dimension(600, 500));
+		    getViewport().setOpaque(false);
+		}
+		@Override
+		protected void paintComponent(Graphics g) {
+		    g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
+		    super.paintComponent(g);
+		}
+		
+		});
+		
 		
 		setBounds(100, 100, 800, 400);
-		sp.setPreferredSize(new Dimension(600, 500));
+		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
 		// Adding Back Button to the eventLisner
 		setLayout(new BorderLayout());
 		setLayout(new FlowLayout());
 		btn1 = new JButton("Back");
+		btn1.setForeground(Color.BLACK);
+		btn1.setFont(new Font("Serif", Font.BOLD, 20));
 		add(btn1);
 		
 		btn1.addActionListener(new ActionListener() {
@@ -73,12 +104,7 @@ public class DueFee extends JFrame {
 			}
 			
 		});
-		
-		 //initializes panels and panel layout
-		BackgroundImage image = new BackgroundImage();
-		panel2 = image.backgroudImage(panel2);
-		lblBackgroundImage = image.getbackgroundimage();
-		add(lblBackgroundImage);		
+			
 	}
 
 	

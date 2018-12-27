@@ -66,39 +66,63 @@ public class EditStudent extends JFrame {
 		setContentPane(contentPane);
 		
 		JLabel lblName = new JLabel("Name:");
+		lblName.setForeground(Color.BLACK);
+		lblName.setFont(new Font("Serif", Font.BOLD, 16));
 		lblName.setVisible(false);
 		
 		JLabel lblEmail = new JLabel("Email:");
+		lblEmail.setForeground(Color.BLACK);
+		lblEmail.setFont(new Font("Serif", Font.BOLD, 16));
 		lblEmail.setVisible(false);
 		
 		JLabel lblCourse = new JLabel("Course:");
+		lblCourse.setForeground(Color.BLACK);
+		lblCourse.setFont(new Font("Serif", Font.BOLD, 12));
 		lblCourse.setVisible(false);
 		
 		JLabel lblFee = new JLabel("Fee:");
+		lblFee.setForeground(Color.BLACK);
+		lblFee.setFont(new Font("Serif", Font.BOLD, 14));
 		lblFee.setVisible(false);
 		
 		JLabel lblPaid = new JLabel("Paid:");
+		lblPaid.setForeground(Color.BLACK);
+		lblPaid.setFont(new Font("Serif", Font.BOLD, 14));
 		lblPaid.setVisible(false);
 		
 		JLabel lblDue = new JLabel("Due:");
+		lblDue.setForeground(Color.BLACK);
+		lblDue.setFont(new Font("Serif", Font.BOLD, 14));
 		lblDue.setVisible(false);
 		
 		JLabel lblAddress = new JLabel("Address:");
+		lblAddress.setForeground(Color.BLACK);
+		lblAddress.setFont(new Font("Serif", Font.BOLD, 16));
 		lblAddress.setVisible(false);
 		
 		JLabel lblCity = new JLabel("City:");
+		lblCity.setForeground(Color.BLACK);
+		lblCity.setFont(new Font("Serif", Font.BOLD, 14));
 		lblCity.setVisible(false);
 		
 		JLabel lblState = new JLabel("State:");
+		lblState.setForeground(Color.BLACK);
+		lblState.setFont(new Font("Serif", Font.BOLD, 16));
 		lblState.setVisible(false);
 		
 		JLabel lblCountry = new JLabel("Country:");
+		lblCountry.setForeground(Color.BLACK);
+		lblCountry.setFont(new Font("Serif", Font.BOLD, 16));
 		lblCountry.setVisible(false);
 		
 		JLabel lblContactNo = new JLabel("Contact No:");
+		lblContactNo.setForeground(Color.BLACK);
+		lblContactNo.setFont(new Font("Serif", Font.BOLD, 16));
 		lblContactNo.setVisible(false);
 		
 		JButton btnAddAccountant = new JButton("Update Student");
+		btnAddAccountant.setForeground(Color.BLACK);
+		btnAddAccountant.setFont(new Font("Serif", Font.BOLD, 13));
 		btnAddAccountant.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -171,6 +195,8 @@ public class EditStudent extends JFrame {
 		textArea = new JTextArea();
 		
 		JButton btnBack = new JButton("back");
+		btnBack.setForeground(Color.BLACK);
+		btnBack.setFont(new Font("Serif", Font.BOLD, 20));
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AccountantSection.main(new String[]{});
@@ -181,6 +207,8 @@ public class EditStudent extends JFrame {
 		
 		
 		JLabel lblRollNo = new JLabel("Roll No:");
+		lblRollNo.setForeground(Color.BLACK);
+		lblRollNo.setFont(new Font("Serif", Font.BOLD, 14));
 		
 		textField_10 = new JTextField();
 		textField_10.setColumns(10);
@@ -190,6 +218,8 @@ public class EditStudent extends JFrame {
 		btnAddAccountant.setVisible(false);
 		
 		JButton btnLoadRecord = new JButton("Load Record");
+		btnLoadRecord.setForeground(Color.BLACK);
+		btnLoadRecord.setFont(new Font("Serif", Font.BOLD, 13));
 		btnLoadRecord.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				

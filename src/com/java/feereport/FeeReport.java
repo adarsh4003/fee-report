@@ -59,9 +59,13 @@ public class FeeReport extends JFrame {
 		setContentPane(contentPane);
 		
 		JLabel lblFeeReport = new JLabel("Fee Report");
-		lblFeeReport.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblFeeReport.setForeground(Color.BLACK);
+		lblFeeReport.setFont(new Font("Serif", Font.BOLD, 20));
 		
 		JButton btnAdminLogin = new JButton("Admin Login");
+		btnAdminLogin.setForeground(Color.BLACK);
+		btnAdminLogin.setFont(new Font("Serif", Font.BOLD, 16));
+		
 		btnAdminLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				AdminLogin.main(new String[]{});
@@ -70,6 +74,9 @@ public class FeeReport extends JFrame {
 		});
 		
 		JButton btnAccountantLogin = new JButton("Accountant Login");
+		btnAccountantLogin.setForeground(Color.BLACK);
+		btnAccountantLogin.setFont(new Font("Serif", Font.BOLD, 13));
+		
 		btnAccountantLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				AccountantLogin.main(new String[]{});

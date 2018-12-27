@@ -1,3 +1,4 @@
+
 package com.java.feereport;
 
 import java.awt.BorderLayout;
@@ -47,6 +48,7 @@ public class AdminLogin extends JFrame {
 	private JPasswordField passwordField;
 	
 	JButton btnLogin = new JButton("login");
+	JButton btnback = new JButton("Back");
 
 	/**
 	 * Launch the application.
@@ -69,6 +71,9 @@ public class AdminLogin extends JFrame {
 	                frame.setVisible(true);
 			}
 		});
+		
+				
+			
 	}
 
 	
@@ -138,6 +143,16 @@ public class AdminLogin extends JFrame {
 			}
 			}
 		});
+		
+		
+		btnback.setFont(new Font("Serif", Font.BOLD, 20));
+		btnback.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				FeeReport.main(new String[]{});
+			}
+		});
+		
 		GroupLayout gl_contentPane = new GroupLayout(panel2);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -157,7 +172,10 @@ public class AdminLogin extends JFrame {
 								.addComponent(textField, GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)))
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGap(177)
-							.addComponent(btnLogin, GroupLayout.PREFERRED_SIZE, 86, GroupLayout.PREFERRED_SIZE)))
+							.addComponent(btnLogin, GroupLayout.PREFERRED_SIZE, 86, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_contentPane.createSequentialGroup()
+								.addGap(177)
+								.addComponent(btnback, GroupLayout.PREFERRED_SIZE, 86, GroupLayout.PREFERRED_SIZE)))
 					.addContainerGap(111, Short.MAX_VALUE))
 		);
 		gl_contentPane.setVerticalGroup(
@@ -174,6 +192,8 @@ public class AdminLogin extends JFrame {
 						.addComponent(lblPassword))
 					.addGap(36)
 					.addComponent(btnLogin, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(51, Short.MAX_VALUE)
+					.addComponent(btnback, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap(51, Short.MAX_VALUE))
 		);
 		panel2.setLayout(gl_contentPane);
