@@ -22,11 +22,14 @@ import java.awt.event.ActionEvent;
 
 public class AddAccountant extends JFrame {
 	static AddAccountant frame;
+	private JPanel panel2 = new JPanel();
 	private JPanel contentPane;
 	private JTextField textField;
 	private JPasswordField passwordField;
 	private JTextField textField_1;
 	private JTextField textField_2;
+	private JLabel lblBackgroundImage;
+	private JButton JButton;
 
 	/**
 	 * Launch the application.
@@ -163,5 +166,13 @@ public class AddAccountant extends JFrame {
 					.addContainerGap())
 		);
 		contentPane.setLayout(gl_contentPane);
+		
+		 //initializes panels and panel layout
+		BackgroundImage image = new BackgroundImage();
+		panel2 = image.backgroudImage(panel2);
+		lblBackgroundImage = image.getbackgroundimage();
+		add(lblBackgroundImage);
+		
 	}
+	
 }

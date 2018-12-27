@@ -1,6 +1,7 @@
 package com.java.feereport;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
@@ -21,8 +22,10 @@ import javax.swing.table.TableColumn;
 
 public class ViewStudent extends JFrame {
 	static ViewStudent frame;
+	private JPanel panel2 = new JPanel();
 	JLabel l1;
 	JButton btn;
+	private JLabel lblBackgroundImage;
 	
 	public ViewStudent() {
 		
@@ -57,25 +60,35 @@ public class ViewStudent extends JFrame {
 		
 		JTable jt=new JTable(data,columnNames);
 		JScrollPane sp=new JScrollPane(jt);
+	//	JScrollPane scrollpane = new JScrollPane(table);
+//	sp.setPreferredSize(new Dimension(500, 500));
 		add(sp);
 		
 		
 		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 800, 400);
-	
 		// Adding Back Button to the eventLisner
-		setLayout(new BorderLayout());
-		setLayout(new FlowLayout());
-		btn = new JButton("Back");
-		add(btn);
+				setLayout(new BorderLayout());
+				setLayout(new FlowLayout());
+				btn = new JButton("Back");
+				add(btn);
+				
+				btn.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						AccountantSection.main(new String[]{});
+						frame.dispose();
+					}
+					
+				});
+	
 		
-		btn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				AccountantSection.main(new String[]{});
-				frame.dispose();
-			}
-		});
+				 //initializes panels and panel layout
+				BackgroundImage image = new BackgroundImage();
+				panel2 = image.backgroudImage(panel2);
+				lblBackgroundImage = image.getbackgroundimage();
+				add(lblBackgroundImage);
+		
 			}
 	
 
@@ -96,4 +109,5 @@ public class ViewStudent extends JFrame {
 			}
 		});
 	}
+
 }

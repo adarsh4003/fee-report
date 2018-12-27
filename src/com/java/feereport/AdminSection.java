@@ -20,8 +20,12 @@ import java.awt.event.ActionEvent;
 
 public class AdminSection extends JFrame {
 	static AdminSection frame;
+	private JPanel panel2 = new JPanel();
+	private JLabel lblBackgroundImage = new JLabel();
 	private JPanel contentPane;
 	JScrollPane sp;
+	private JButton btnViewAccountant;
+	private JButton btnLogout;
 	/**
 	 * Launch the application.
 	 */
@@ -41,7 +45,8 @@ public class AdminSection extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public AdminSection() {
+	public AdminSection() {		
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -104,6 +109,14 @@ public class AdminSection extends JFrame {
 					.addContainerGap(59, Short.MAX_VALUE))
 		);
 		contentPane.setLayout(gl_contentPane);
+		
+		 //initializes panels and panel layout
+		BackgroundImage image = new BackgroundImage();
+		panel2 = image.backgroudImage(panel2);
+		lblBackgroundImage = image.getbackgroundimage();
+		add(lblBackgroundImage);
 	}
-
+	
+	
 }
+

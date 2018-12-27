@@ -5,12 +5,15 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Color;
+import java.awt.Component;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -18,6 +21,9 @@ import java.awt.event.ActionEvent;
 public class FeeReport extends JFrame {
 	static FeeReport frame;
 	private JPanel contentPane;
+	private JPanel panel2 = new JPanel();
+	private JLabel lblBackgroundImage = new JLabel();
+	private Component btnAdminLogin;
 
 	/**
 	 * Launch the application.
@@ -26,11 +32,16 @@ public class FeeReport extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					frame = new FeeReport();
-					frame.setVisible(true);
+					UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
+				frame = new FeeReport();
+				frame.setVisible(true);
+				 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	                frame.pack();
+	                frame.setLocationRelativeTo(null);
+	                frame.setVisible(true);
 			}
 		});
 	}
@@ -42,6 +53,7 @@ public class FeeReport extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
+		panel2.add(contentPane);
 		contentPane.setForeground(Color.DARK_GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -87,5 +99,12 @@ public class FeeReport extends JFrame {
 					.addContainerGap(91, Short.MAX_VALUE))
 		);
 		contentPane.setLayout(gl_contentPane);
+		
+		 //initializes panels and panel layout
+		BackgroundImage image = new BackgroundImage();
+		panel2 = image.backgroudImage(panel2);
+		lblBackgroundImage = image.getbackgroundimage();
+		add(lblBackgroundImage);
+		
 	}
 }

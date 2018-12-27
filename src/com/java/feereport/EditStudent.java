@@ -24,6 +24,7 @@ import javax.swing.JSeparator;
 
 public class EditStudent extends JFrame {
 	static EditStudent frame;
+	private JPanel panel2 = new JPanel();
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
@@ -37,6 +38,7 @@ public class EditStudent extends JFrame {
 	private JTextField textField_9;
 	JTextArea textArea;
 	private JTextField textField_10;
+	private JLabel lblBackgroundImage;
 	/**
 	 * Launch the application.
 	 */
@@ -242,6 +244,9 @@ public class EditStudent extends JFrame {
 					
 					textField_9.setVisible(true);
 					lblCountry.setVisible(true);
+					
+					lblContactNo.setVisible(true);
+					
 				int rollno=Integer.parseInt(srollno);
 				Student s=StudentData.getStudentByRollno(rollno);
 				textField.setText(s.getName());
@@ -382,5 +387,12 @@ public class EditStudent extends JFrame {
 					.addContainerGap())
 		);
 		contentPane.setLayout(gl_contentPane);
+		
+		 //initializes panels and panel layout
+		BackgroundImage image = new BackgroundImage();
+		panel2 = image.backgroudImage(panel2);
+		lblBackgroundImage = image.getbackgroundimage();
+		add(lblBackgroundImage);
 	}
+	
 }

@@ -15,6 +15,8 @@ import javax.swing.JOptionPane;
 
 import java.awt.Font;
 import java.awt.Color;
+import java.awt.Dimension;
+
 import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.JPasswordField;
@@ -68,6 +70,14 @@ public class AdminLogin extends JFrame {
 		});
 	}
 
+	
+//	public JPanel backgroudImage(JPanel panel) {
+//		
+//        
+//        
+//        return panel;
+//	}
+	
 	/**
 	 * Create the frame.
 	 */
@@ -75,26 +85,14 @@ public class AdminLogin extends JFrame {
 //----------------------------------------------------------------------------------------------------------------------------------------------------//		
 		setTitle("ADMIN-LOGIN");
         setSize(650, 650);
+       panel2  = new JPanel();
+       
 
-        //initializes panels and panel layout
-        panel2 = new JPanel();
-        panel2.setOpaque(false);
-        panel2.setLayout(new FlowLayout());
-
-        lblBackgroundImage.setLayout(new FlowLayout());
-
-        //sets background image of panel
-        lblBackgroundImage.setIcon(new ImageIcon("C:\\Users\\P C\\Desktop\\images.jpg"));
-        lblBackgroundImage.setLayout(new BorderLayout());
-        lblBackgroundImage.setSize(500, 500);
-
-        //adds button to panels
-        panel2.add(btnLogin);
-      
-        lblBackgroundImage.add(panel2);
-
-        add(lblBackgroundImage);
-		
+		 //initializes panels and panel layout
+		BackgroundImage image = new BackgroundImage();
+		panel2 = image.backgroudImage(panel2);
+		lblBackgroundImage = image.getbackgroundimage();
+		add(lblBackgroundImage);
 		
 //----------------------------------------------------------------------------------------------------------------------------------------------------//		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -109,6 +107,7 @@ public class AdminLogin extends JFrame {
 		
 		JLabel lblName = new JLabel("Name:");
 		lblName.setForeground(Color.red);
+	    lblName.setSize(500, 500);
 		
 		JLabel lblPassword = new JLabel("Password:");
 		lblPassword.setForeground(Color.red);
@@ -128,6 +127,7 @@ public class AdminLogin extends JFrame {
 				String s[]={};
 				AdminSection.main(s);
 				frame.dispose();
+				
 			}else{
 				JOptionPane.showMessageDialog(AdminLogin.this,"Sorry, username or password error!");
 				textField.setText("");passwordField.setText("");

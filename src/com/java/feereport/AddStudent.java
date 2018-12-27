@@ -23,6 +23,7 @@ import javax.swing.JTextArea;
 
 public class AddStudent extends JFrame {
 	static AddStudent frame;
+	private JPanel panel2 = new JPanel();
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
@@ -35,6 +36,7 @@ public class AddStudent extends JFrame {
 	private JTextField textField_8;
 	private JTextField textField_9;
 	JTextArea textArea;
+	private JLabel lblBackgroundImage;
 	/**
 	 * Launch the application.
 	 */
@@ -271,5 +273,12 @@ public class AddStudent extends JFrame {
 					.addContainerGap())
 		);
 		contentPane.setLayout(gl_contentPane);
+		
+		 //initializes panels and panel layout
+		BackgroundImage image = new BackgroundImage();
+		panel2 = image.backgroudImage(panel2);
+		lblBackgroundImage = image.getbackgroundimage();
+		add(lblBackgroundImage);
 	}
+	
 }

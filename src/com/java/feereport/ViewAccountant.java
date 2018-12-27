@@ -10,6 +10,7 @@ import java.util.List;
 import javax.swing.GroupLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -19,6 +20,9 @@ import javax.swing.border.EmptyBorder;
 
 public class ViewAccountant extends JFrame {
 	static ViewAccountant frame;
+	private JPanel panel2 = new JPanel();
+	private JLabel lblBackgroundImage;
+	private JButton btn;
 	public ViewAccountant() {
 		//Code to view data in JTable
 		List<Accountant> list=AccountantData.view();
@@ -55,6 +59,12 @@ public class ViewAccountant extends JFrame {
 				frame.dispose();
 			}
 		});
+		
+		 //initializes panels and panel layout
+		BackgroundImage image = new BackgroundImage();
+		panel2 = image.backgroudImage(panel2);
+		lblBackgroundImage = image.getbackgroundimage();
+		add(lblBackgroundImage);
 		
 	}
 

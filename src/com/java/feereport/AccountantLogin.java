@@ -2,6 +2,7 @@ package com.java.feereport;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.FlowLayout;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -22,9 +23,11 @@ import java.awt.event.ActionEvent;
 
 public class AccountantLogin extends JFrame {
 	static AccountantLogin frame;
+	private JPanel panel2 = new JPanel();
 	private JPanel contentPane;
 	private JTextField textField;
 	private JPasswordField passwordField;
+	private JLabel lblBackgroundImage;
 
 	/**
 	 * Launch the application.
@@ -53,7 +56,7 @@ public class AccountantLogin extends JFrame {
 		setContentPane(contentPane);
 		
 		JLabel lblAccountantLogin = new JLabel("Accountant Login");
-		lblAccountantLogin.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblAccountantLogin.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblAccountantLogin.setForeground(Color.DARK_GRAY);
 		
 		JLabel lblName = new JLabel("Name:");
@@ -81,6 +84,19 @@ public class AccountantLogin extends JFrame {
 		});
 		
 		JButton btnBack = new JButton("back");
+		// Adding Back Button to the eventLisner
+				setLayout(new BorderLayout());
+				setLayout(new FlowLayout());
+				//JButton btn = new JButton("Back");
+				add(btnBack);
+				
+				btnBack.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						FeeReport.main(new String[]{});
+						frame.dispose();
+					}
+				});
+				
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -128,5 +144,13 @@ public class AccountantLogin extends JFrame {
 					.addContainerGap(96, Short.MAX_VALUE))
 		);
 		contentPane.setLayout(gl_contentPane);
+		
+		 //initializes panels and panel layout
+		BackgroundImage image = new BackgroundImage();
+		panel2 = image.backgroudImage(panel2);
+		lblBackgroundImage = image.getbackgroundimage();
+		add(lblBackgroundImage);
 	}
+	
+	
 }

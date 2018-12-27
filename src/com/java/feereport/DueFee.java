@@ -9,6 +9,7 @@ import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -16,8 +17,13 @@ import javax.swing.border.EmptyBorder;
 
 public class DueFee extends JFrame {
 	static DueFee frame;
+	private JPanel panel2 = new JPanel();
 	JButton btn1;
-	public DueFee() {
+
+	private JLabel lblBackgroundImage;
+	private JButton btn;
+
+	public  DueFee() {
 		
 		
 		//Code to view data in JTable
@@ -62,10 +68,17 @@ public class DueFee extends JFrame {
 				AccountantSection.main(new String[]{});
 				frame.dispose();
 			}
+			
 		});
 		
-		
+		 //initializes panels and panel layout
+		BackgroundImage image = new BackgroundImage();
+		panel2 = image.backgroudImage(panel2);
+		lblBackgroundImage = image.getbackgroundimage();
+		add(lblBackgroundImage);		
 	}
+
+	
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -80,4 +93,6 @@ public class DueFee extends JFrame {
 			}
 		});
 	}
+
+
 }

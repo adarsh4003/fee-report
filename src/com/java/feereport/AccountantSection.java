@@ -18,7 +18,9 @@ import java.awt.event.ActionEvent;
 
 public class AccountantSection extends JFrame {
 	static AccountantSection frame;
+	private JPanel panel2 = new JPanel();
 	private JPanel contentPane;
+	private JLabel lblBackgroundImage;
 
 	/**
 	 * Launch the application.
@@ -55,7 +57,7 @@ public class AccountantSection extends JFrame {
 		});
 		
 		JLabel lblAccountantSection = new JLabel("Accountant Section");
-		lblAccountantSection.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblAccountantSection.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblAccountantSection.setForeground(Color.DARK_GRAY);
 		
 		JButton btnViewStudent = new JButton("View Student");
@@ -129,6 +131,13 @@ public class AccountantSection extends JFrame {
 					.addContainerGap(138, Short.MAX_VALUE))
 		);
 		contentPane.setLayout(gl_contentPane);
+//		panel2 = backgroudImage(panel2, btnViewStudent);
+		
+		 //initializes panels and panel layout
+		BackgroundImage image = new BackgroundImage();
+		panel2 = image.backgroudImage(panel2);
+		lblBackgroundImage = image.getbackgroundimage();
+		add(lblBackgroundImage);
 	}
 
 }
